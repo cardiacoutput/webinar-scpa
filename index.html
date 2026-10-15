@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Beyond Borders in Anesthesia</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Cinzel:wght@700;900&family=Lora:ital,wght@0,500;0,600;1,400;1,500&display=swap">
+<style>
+/* Layout: dark photographic hero band, then a bright single-column scroll of sections; tricolor (red · green · sky) marks the five countries */
+:root {
+  --navy: #021226;
+  --navy-2: #06234A;
+  --on-navy: #E4F4FD;
+  --bg: #F4FAFE;
+  --surface: #FFFFFF;
+  --fg: #0B2545;
+  --muted: #45607A;
+  --line: #CFE7F5;
+  --sky: #4FC3F7;
+  --sky-ink: #0A74B0;
+  --green: #2BB673;
+  --green-ink: #12803F;
+  --red: #E63946;
+  --red-ink: #C8232F;
+  --tint-sky: #E3F4FD;
+  --tint-green: #E3F6EC;
+  --tint-red: #FDE8EA;
+  --display: 'Cinzel', 'Trajan Pro', Georgia, serif;
+  --serif: 'Lora', Georgia, 'Times New Roman', serif;
+  --sans: 'Barlow', 'Segoe UI', system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #061528; --surface: #0C2140; --fg: #E6F1FA; --muted: #9DB4CB; --line: #1E3B60;
+  --sky-ink: #6FD0FA; --green-ink: #5CD394; --red-ink: #FF7A83;
+  --tint-sky: #0E2E50; --tint-green: #0E3326; --tint-red: #3A1620; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #061528; --surface: #0C2140; --fg: #E6F1FA; --muted: #9DB4CB; --line: #1E3B60;
+  --sky-ink: #6FD0FA; --green-ink: #5CD394; --red-ink: #FF7A83;
+  --tint-sky: #0E2E50; --tint-green: #0E3326; --tint-red: #3A1620; color-scheme: dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55}
+h1,h2,h3{text-wrap:balance;margin:0}
+p{margin:0}
+a{color:var(--sky-ink)}
+:focus-visible{outline:3px solid var(--sky);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.tricolor{display:flex;height:5px}
+.tricolor i{flex:1}
+.tricolor i:nth-child(1){background:var(--red)}
+.tricolor i:nth-child(2){background:#FFFFFF}
+.tricolor i:nth-child(3){background:var(--green)}
+.tricolor i:nth-child(4){background:var(--sky)}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;background:rgba(2,18,38,.94);backdrop-filter:blur(8px);color:var(--on-navy)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.logos{display:flex;align-items:center;gap:10px;min-width:0}
+.logos img{height:40px;width:auto;display:block}
+.logos .sep{width:1px;height:30px;background:rgba(255,255,255,.35)}
+.nav{display:flex;align-items:center;gap:20px}
+.nav a{color:var(--on-navy);text-decoration:none;font-weight:500;font-size:15px}
+.nav a:hover{color:var(--sky)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;border:0;font:600 15px/1 var(--sans);letter-spacing:.02em;text-decoration:none;cursor:pointer}
+.btn-red{background:var(--red);color:#FFFFFF}
+.btn-red:hover{background:#CF2B38}
+.btn-ghost{background:transparent;color:#FFFFFF;border:1.5px solid rgba(255,255,255,.6)}
+.btn-ghost:hover{border-color:#FFFFFF}
+.btn-green{background:#12803F;color:#FFFFFF}
+.btn-green:hover{background:#0E6B34}
+.btn-line{background:transparent;color:var(--sky-ink);border:1.5px solid var(--line)}
+.btn-line:hover{border-color:var(--sky-ink)}
+.nav .btn{min-height:40px;padding:0 16px;font-size:14px}
+@media (max-width:820px){ .nav a:not(.btn){display:none} .logos img{height:34px} }
+@media (max-width:420px){ .logos .hide-xs{display:none} }
+
+/* hero */
+.hero{position:relative;background:var(--navy);color:#FFFFFF;overflow:hidden}
+.hero-img{position:absolute;right:0;top:0;height:100%;width:62%;object-fit:cover;object-position:left center;opacity:.95}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 34%,rgba(2,18,38,.55) 60%,rgba(2,18,38,0) 85%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;padding-block:56px 48px;display:flex;flex-direction:column;gap:18px}
+.eyebrow{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:var(--red);color:#FFFFFF;border-radius:999px;padding:6px 14px;font-size:12px;font-weight:700;letter-spacing:.2em}
+.hero h1{font-family:var(--display);font-weight:900;font-size:clamp(40px,8vw,76px);line-height:.98;letter-spacing:.01em;max-width:11ch}
+.hero h1 span{display:block;font-size:.68em;margin-top:6px;background:linear-gradient(180deg,#FF9AA0,#FF4D5A 55%,#E63946);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-family:var(--serif);font-size:clamp(18px,2.6vw,22px);font-weight:600}
+.hero .org{font-family:var(--serif);color:#9BE0FF;font-size:15px;margin-top:-10px}
+.hero .tag{font-family:var(--serif);font-style:italic;color:var(--on-navy);font-size:18px;max-width:30ch}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.fact{display:flex;align-items:center;gap:10px;background:rgba(6,35,74,.75);border:1px solid rgba(79,195,247,.45);border-radius:10px;padding:10px 14px}
+.fact svg{flex-shrink:0}
+.fact b{display:block;font-size:16px}
+.fact small{display:block;font-size:12.5px;color:var(--on-navy)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.countdown{display:flex;gap:8px;margin-top:6px;font-variant-numeric:tabular-nums}
+.countdown div{min-width:62px;text-align:center;background:rgba(255,255,255,.08);border-radius:8px;padding:8px 6px}
+.countdown b{display:block;font-size:24px;line-height:1}
+.countdown small{font-size:11px;letter-spacing:.14em;color:var(--on-navy)}
+.flags{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px}
+.flags figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:4px}
+.flags img{width:40px;height:40px}
+.flags figcaption{font-size:11px;font-weight:600;letter-spacing:.08em}
+@media (max-width:680px){ .hero-img{width:100%;opacity:.35} .hero::after{background:linear-gradient(180deg,rgba(2,18,38,.6),var(--navy) 90%)} }
+
+/* sections */
+section{padding-block:56px}
+section + section{border-top:1px solid var(--line)}
+.label{font-size:12.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.label::after{content:"";flex:1;height:1px;background:currentColor;opacity:.3}
+.l-red{color:var(--red-ink)} .l-green{color:var(--green-ink)} .l-sky{color:var(--sky-ink)}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(24px,3.6vw,32px);margin-bottom:14px}
+.lead{max-width:65ch;color:var(--muted);font-size:17px}
+.grid{display:grid;gap:14px}
+.g5{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;min-width:0}
+
+.focus{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.focus .ic{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#FFFFFF}
+.focus h3{font-size:17px;font-weight:600;line-height:1.25}
+.bg-sky{background:var(--sky)} .bg-green{background:var(--green)} .bg-red{background:var(--red)}
+
+.uni{display:flex;flex-direction:column;gap:10px}
+.uni .head{display:flex;align-items:center;gap:10px}
+.uni .head img{width:28px;height:28px}
+.uni .country{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--sky-ink);text-transform:uppercase}
+.uni h3{font-size:16px;font-weight:600;line-height:1.3}
+.speaker{margin-top:auto;display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px dashed var(--line);color:var(--muted);font-size:14px}
+.avatar{width:40px;height:40px;border-radius:50%;background:var(--tint-sky);display:flex;align-items:center;justify-content:center;color:var(--sky-ink);flex-shrink:0}
+
+/* program */
+.timeline{display:flex;flex-direction:column;gap:0;border-left:3px solid var(--line);margin-left:6px}
+.slot{position:relative;padding:4px 0 22px 22px}
+.slot::before{content:"";position:absolute;left:-9px;top:8px;width:15px;height:15px;border-radius:50%;background:var(--surface);border:3px solid var(--sky)}
+.slot.red::before{border-color:var(--red)} .slot.green::before{border-color:var(--green)}
+.slot time{font-weight:700;font-variant-numeric:tabular-nums;color:var(--sky-ink)}
+.slot p{color:var(--muted);font-size:15px}
+.tz{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:15px}
+.tz th,.tz td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line)}
+.tz th{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.tz td img{width:20px;height:20px;vertical-align:-4px;margin-right:8px}
+.tz tr.you td{color:var(--green-ink);font-weight:600}
+.note{font-size:14px;color:var(--muted);margin-top:10px}
+.pill{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;border-radius:999px;padding:3px 10px;background:var(--tint-red);color:var(--red-ink)}
+
+.aud{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.aud span{background:var(--tint-green);color:var(--green-ink);border-radius:999px;padding:6px 14px;font-weight:600;font-size:15px}
+
+/* register */
+.reg{background:linear-gradient(135deg,var(--tint-green),var(--tint-sky))}
+form{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field.full{grid-column:1/-1}
+label{font-weight:600;font-size:14px}
+input,select{font:16px var(--sans);color:var(--fg);background:var(--surface);border:1.5px solid var(--line);border-radius:10px;min-height:46px;padding:0 12px;width:100%}
+input:focus,select:focus{border-color:var(--sky-ink);outline:none;box-shadow:0 0 0 3px rgba(79,195,247,.35)}
+.err{color:var(--red-ink);font-size:13px;min-height:1em}
+.actions{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.result{margin-top:18px}
+.result pre{white-space:pre-wrap;font:14px/1.5 var(--sans);background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:14px;margin:10px 0}
+.free{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--green-ink);letter-spacing:.06em}
+
+/* contact + footer */
+.contact{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.num{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;user-select:all}
+footer{background:var(--navy);color:var(--on-navy)}
+footer .wrap{padding-block:30px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+footer .logos img{height:44px}
+footer .motto{font-family:var(--serif);font-style:italic;color:#FF8A90;font-size:18px}
+footer small{font-size:13px;opacity:.8}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom, 0px));transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:10px 18px;border-radius:999px;font-weight:600;font-size:14px;z-index:50}
+@media (prefers-reduced-motion:no-preference){ .btn{transition:background .15s,border-color .15s} }
+</style>
+
+<header class="top">
+  <div class="tricolor" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="logos">
+      <img src="img/umy-white.png" alt="Universitas Muhammadiyah Yogyakarta">
+      <span class="sep" aria-hidden="true"></span>
+      <img src="img/scpa-white.png" alt="Society for Critical and Precision Anesthesiology">
+      <span class="sep hide-xs" aria-hidden="true"></span>
+      <img class="hide-xs" src="img/perdatin.png" alt="PERDATIN">
+    </div>
+    <nav class="nav" aria-label="Sections">
+      <a href="#overview">Overview</a>
+      <a href="#program">Program</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-red" href="#register">Register</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <img class="hero-img" src="img/hero.jpg" alt="">
+    <div class="wrap">
+      <span class="eyebrow">FIRST ANNOUNCEMENT</span>
+      <h1>Beyond Borders <span>in Anesthesia</span></h1>
+      <p class="sub">International Joint Webinar</p>
+      <p class="org">Society for Critical and Precision Anesthesiology (SCPA)</p>
+      <p class="tag">Advancing clinical excellence through global collaboration</p>
+      <div class="facts">
+        <div class="fact">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4FC3F7" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          <div><b>Saturday, 19 December 2026</b><small>Save the date</small></div>
+        </div>
+        <div class="fact">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4FC3F7" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><b>13.00 – 18.00 WIB</b><small>UTC+7 · Jakarta time</small></div>
+        </div>
+        <div class="fact">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4FC3F7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="14" height="12" rx="2.5"/><path d="M16 10.5 22 7v10l-6-3.5"/></svg>
+          <div><b>Online · Zoom Meeting</b><small>Free registration</small></div>
+        </div>
+      </div>
+      <div class="countdown" id="countdown" aria-live="off" aria-label="Time until the webinar starts">
+        <div><b id="cd-d">–</b><small>DAYS</small></div>
+        <div><b id="cd-h">–</b><small>HRS</small></div>
+        <div><b id="cd-m">–</b><small>MIN</small></div>
+      </div>
+      <div class="cta">
+        <a class="btn btn-red" href="#register">Register for free</a>
+        <a class="btn btn-ghost" id="gcal" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Beyond%20Borders%20in%20Anesthesia%20%E2%80%93%20International%20Joint%20Webinar&amp;dates=20261219T060000Z%2F20261219T110000Z&amp;details=International%20Joint%20Webinar%2C%20Society%20for%20Critical%20and%20Precision%20Anesthesiology%20(SCPA).%20Online%20via%20Zoom%20Meeting.&amp;location=Zoom%20Meeting" target="_blank" rel="noopener">Add to Google Calendar</a>
+      </div>
+      <div class="flags" aria-label="Participating countries">
+        <figure><img src="img/flag-id.png" alt=""><figcaption>INDONESIA</figcaption></figure>
+        <figure><img src="img/flag-my.png" alt=""><figcaption>MALAYSIA</figcaption></figure>
+        <figure><img src="img/flag-ir.png" alt=""><figcaption>IRAN</figcaption></figure>
+        <figure><img src="img/flag-tr.png" alt=""><figcaption>TÜRKIYE</figcaption></figure>
+        <figure><img src="img/flag-uz.png" alt=""><figcaption>UZBEKISTAN</figcaption></figure>
+      </div>
+    </div>
+  </div>
+  <div class="tricolor" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+  <section id="overview">
+    <div class="wrap">
+      <div class="label l-red">Overview</div>
+      <h2>Five countries, one conversation on safer anesthesia</h2>
+      <p class="lead">Hosted by the Study Program of Anesthesiology and Intensive Therapy, Faculty of Medicine and Health Sciences, Universitas Muhammadiyah Yogyakarta, together with SCPA and PERDATIN. Anesthesiologists and intensivists from Indonesia, Malaysia, Iran, Türkiye and Uzbekistan share clinical experience and current evidence across the perioperative journey, from the airway to recovery.</p>
+
+      <div class="label l-green" style="margin-top:36px">Scientific focus</div>
+      <div class="grid g5">
+        <div class="card focus"><span class="ic bg-sky"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="4.5" r="2"/><path d="M11 7.5V14m0 0-2.5 7M11 14l2.5 7M11 9.5l-3.5 3M11 9.5l4 2V21"/></svg></span><h3>Geriatric Anesthesia</h3></div>
+        <div class="card focus"><span class="ic bg-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 2 4 4m-2-2-3.5 3.5m1 1-9 9-2-2 9-9ZM8 13l2 2m1-5 2 2m-5.5 4.5L3 21"/></svg></span><h3>Pain Medicine</h3></div>
+        <div class="card focus"><span class="ic bg-red"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v8m0 0-3 2m3-2 3 2M8.5 7C5 7 3 13 3 17c0 3 2 4 4 3s2.5-3 2.5-6V8.5M15.5 7C19 7 21 13 21 17c0 3-2 4-4 3s-2.5-3-2.5-6V8.5"/></svg></span><h3>Airway Safety</h3></div>
+        <div class="card focus"><span class="ic bg-sky"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M6 11h3l1.5-3 2.5 6 1.5-3H18M9 21h6m-3-4v4"/></svg></span><h3>Intensive Care</h3></div>
+        <div class="card focus"><span class="ic bg-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7v12m0-4h20v4m0-4v-3c0-1.5-1-2.5-2.5-2.5H11V15"/><circle cx="6.5" cy="11.5" r="2"/></svg></span><h3>Post-Anesthesia Recovery</h3></div>
+      </div>
+
+      <div class="label l-sky" style="margin-top:36px">Who should attend</div>
+      <div class="aud"><span>Anesthesiologists</span><span>Residents</span><span>Medical Students</span></div>
+      <p class="note">From Indonesia, Malaysia, Iran, Türkiye and Uzbekistan, and colleagues worldwide.</p>
+    </div>
+  </section>
+
+  <section id="program">
+    <div class="wrap">
+      <div class="label l-sky">Program</div>
+      <h2>Saturday, 19 December 2026</h2>
+      <div class="grid g2" style="align-items:start">
+        <div class="card">
+          <div class="timeline">
+            <div class="slot red"><time>13.00 WIB</time><p>Opening and welcome remarks</p></div>
+            <div class="slot"><time>Scientific sessions</time><p>Lectures on the five focus areas by speakers from the five partner universities</p></div>
+            <div class="slot green"><time>Discussion</time><p>Interactive Q&amp;A with participants and faculty</p></div>
+            <div class="slot red" style="padding-bottom:0"><time>18.00 WIB</time><p>Closing</p></div>
+          </div>
+          <p class="note"><span class="pill">TO BE ANNOUNCED</span> The detailed schedule will be released in the Second Announcement.</p>
+        </div>
+        <div class="card">
+          <h3 style="font-size:17px;margin-bottom:8px">Webinar time in each country</h3>
+          <div style="overflow-x:auto">
+            <table class="tz">
+              <thead><tr><th>Country</th><th>Local time</th></tr></thead>
+              <tbody id="tz-body">
+                <tr><td><img src="img/flag-id.png" alt="">Indonesia (WIB)</td><td>13.00 – 18.00</td></tr>
+                <tr><td><img src="img/flag-my.png" alt="">Malaysia</td><td>14.00 – 19.00</td></tr>
+                <tr><td><img src="img/flag-uz.png" alt="">Uzbekistan</td><td>11.00 – 16.00</td></tr>
+                <tr><td><img src="img/flag-ir.png" alt="">Iran</td><td>09.30 – 14.30</td></tr>
+                <tr><td><img src="img/flag-tr.png" alt="">Türkiye</td><td>09.00 – 14.00</td></tr>
+                <tr class="you" id="tz-you" hidden><td>Your time</td><td id="tz-you-time"></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="speakers">
+    <div class="wrap">
+      <div class="label l-red">Joint collaboration universities &amp; speakers</div>
+      <h2>Speakers from five partner universities</h2>
+      <div class="grid g5">
+        <div class="card uni"><div class="head"><img src="img/flag-id.png" alt=""><span class="country">Indonesia</span></div><h3>Universitas Muhammadiyah Yogyakarta</h3><div class="speaker"><span class="avatar" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>To be announced</div></div>
+        <div class="card uni"><div class="head"><img src="img/flag-my.png" alt=""><span class="country">Malaysia</span></div><h3>Universiti Kebangsaan Malaysia (UKM)</h3><div class="speaker"><span class="avatar" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>To be announced</div></div>
+        <div class="card uni"><div class="head"><img src="img/flag-ir.png" alt=""><span class="country">Iran</span></div><h3>Tehran University of Medical Sciences (TUMS)</h3><div class="speaker"><span class="avatar" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>To be announced</div></div>
+        <div class="card uni"><div class="head"><img src="img/flag-tr.png" alt=""><span class="country">Türkiye</span></div><h3>Erciyes University</h3><div class="speaker"><span class="avatar" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>To be announced</div></div>
+        <div class="card uni"><div class="head"><img src="img/flag-uz.png" alt=""><span class="country">Uzbekistan</span></div><h3>Tashkent State Medical University (TSMU)</h3><div class="speaker"><span class="avatar" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>To be announced</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="register" class="reg">
+    <div class="wrap">
+      <div class="label l-green">Registration</div>
+      <h2>Register for the webinar</h2>
+      <p class="lead" style="margin-bottom:22px"><span class="free">FREE</span> · Fill in the form, then send your registration to the committee on WhatsApp. The Zoom link will be shared with registered participants.</p>
+      <form id="reg-form" novalidate>
+        <div class="field full"><label for="f-name">Full name with academic title</label><input id="f-name" name="name" autocomplete="name" placeholder="e.g. dr. Siti Rahma, Sp.An"><span class="err" id="e-name"></span></div>
+        <div class="field"><label for="f-role">Profession</label>
+          <select id="f-role" name="role">
+            <option value="">Choose one</option>
+            <option>Anesthesiologist</option>
+            <option>Anesthesiology resident</option>
+            <option>Medical student</option>
+            <option>General practitioner</option>
+            <option>Nurse</option>
+            <option>Other</option>
+          </select><span class="err" id="e-role"></span></div>
+        <div class="field"><label for="f-inst">Institution</label><input id="f-inst" name="inst" autocomplete="organization" placeholder="Hospital or university"><span class="err" id="e-inst"></span></div>
+        <div class="field"><label for="f-country">Country</label>
+          <select id="f-country" name="country">
+            <option value="">Choose one</option>
+            <option>Indonesia</option><option>Malaysia</option><option>Iran</option><option>Türkiye</option><option>Uzbekistan</option><option>Other</option>
+          </select><span class="err" id="e-country"></span></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="name@example.com"><span class="err" id="e-email"></span></div>
+        <div class="field"><label for="f-wa">WhatsApp number</label><input id="f-wa" name="wa" type="tel" autocomplete="tel" placeholder="+62 812 ..."><span class="err" id="e-wa"></span></div>
+        <div class="actions"><button class="btn btn-red" type="submit">Prepare my registration</button></div>
+      </form>
+      <div class="result card" id="result" hidden>
+        <h3 style="font-size:18px">Almost done. Send this to the committee</h3>
+        <p class="note" style="margin-top:4px">Tap the green button to open WhatsApp with your details filled in, then press send. Your registration is complete once the committee receives the message.</p>
+        <pre id="msg"></pre>
+        <div class="actions">
+          <a class="btn btn-green" id="wa-link" href="https://wa.me/6281215720516" target="_blank" rel="noopener">Send on WhatsApp</a>
+          <button class="btn btn-line" type="button" id="copy-msg">Copy details</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="label l-sky">Contact</div>
+      <h2>Questions about the webinar</h2>
+      <div class="contact">
+        <span class="num" id="cp">+62 812-1572-0516</span>
+        <button class="btn btn-line" type="button" id="copy-cp">Copy number</button>
+        <a class="btn btn-green" href="https://wa.me/6281215720516" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      </div>
+      <p class="note">Contact person, Organizing Committee · Study Program of Anesthesiology and Intensive Therapy, Faculty of Medicine and Health Sciences, Universitas Muhammadiyah Yogyakarta</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="tricolor" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="logos">
+      <img src="img/umy-white.png" alt="Universitas Muhammadiyah Yogyakarta">
+      <span class="sep" aria-hidden="true"></span>
+      <img src="img/scpa-white.png" alt="SCPA">
+      <span class="sep" aria-hidden="true"></span>
+      <img src="img/perdatin.png" alt="PERDATIN">
+    </div>
+    <p class="motto">Bridging Nations, Advancing Anesthesia</p>
+    <small>Academic Collaboration · Research · Clinical Mobility · Continuing Education</small>
+    <small>© 2026 Study Program of Anesthesiology and Intensive Therapy, FKIK UMY</small>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+(function(){
+  var START = Date.UTC(2026, 11, 19, 6, 0, 0);
+  var END = Date.UTC(2026, 11, 19, 11, 0, 0);
+  var WA = '6281215720516';
+
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function tick(){
+    var ms = START - Date.now();
+    var cd = document.getElementById('countdown');
+    if (ms <= 0) { cd.hidden = true; return; }
+    var m = Math.floor(ms/60000);
+    document.getElementById('cd-d').textContent = Math.floor(m/1440);
+    document.getElementById('cd-h').textContent = pad(Math.floor(m%1440/60));
+    document.getElementById('cd-m').textContent = pad(m%60);
+  }
+  tick(); setInterval(tick, 30000);
+
+  // Viewer's own local time, when it differs from the five listed zones
+  try {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    var listed = ['Asia/Jakarta','Asia/Pontianak','Asia/Kuala_Lumpur','Asia/Tashkent','Asia/Tehran','Europe/Istanbul'];
+    if (tz && listed.indexOf(tz) === -1) {
+      var f = new Intl.DateTimeFormat('en-GB', {hour:'2-digit', minute:'2-digit', hour12:false});
+      var d = new Intl.DateTimeFormat('en-GB', {weekday:'short', day:'numeric', month:'short'});
+      document.getElementById('tz-you-time').textContent =
+        f.format(START).replace(':','.') + ' – ' + f.format(END).replace(':','.') + ' (' + d.format(START) + ')';
+      document.querySelector('#tz-you td').textContent = 'Your time (' + tz.replace(/_/g,' ') + ')';
+      document.getElementById('tz-you').hidden = false;
+    }
+  } catch (e) {}
+
+  var toastTimer;
+  function toast(t){
+    var el = document.getElementById('toast');
+    el.textContent = t; el.hidden = false;
+    clearTimeout(toastTimer); toastTimer = setTimeout(function(){ el.hidden = true; }, 2200);
+  }
+  function copy(text, node){
+    try {
+      navigator.clipboard.writeText(text).then(function(){ toast('Copied'); }, function(){ select(node); });
+    } catch (e) { select(node); }
+  }
+  function select(node){
+    var r = document.createRange(); r.selectNodeContents(node);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    toast('Selected. Copy it from your keyboard menu');
+  }
+
+  document.getElementById('copy-cp').addEventListener('click', function(){
+    copy('+6281215720516', document.getElementById('cp'));
+  });
+
+  var form = document.getElementById('reg-form');
+  var draftKey = 'bba-reg-draft';
+  var ids = ['name','role','inst','country','email','wa'];
+  try {
+    var saved = JSON.parse(localStorage.getItem(draftKey) || '{}');
+    ids.forEach(function(k){ if (saved[k]) document.getElementById('f-'+k).value = saved[k]; });
+  } catch (e) {}
+  form.addEventListener('input', function(){
+    var o = {}; ids.forEach(function(k){ o[k] = document.getElementById('f-'+k).value; });
+    try { localStorage.setItem(draftKey, JSON.stringify(o)); } catch (e) {}
+  });
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var v = {}; ids.forEach(function(k){ v[k] = document.getElementById('f-'+k).value.trim(); });
+    var errs = {
+      name: v.name ? '' : 'Enter your full name.',
+      role: v.role ? '' : 'Choose your profession.',
+      inst: v.inst ? '' : 'Enter your hospital or university.',
+      country: v.country ? '' : 'Choose your country.',
+      email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email) ? '' : 'Enter a valid email, for example name@example.com.',
+      wa: /^\+?[\d\s\-]{8,}$/.test(v.wa) ? '' : 'Enter your WhatsApp number with country code, for example +62 812 ...'
+    };
+    var first = null;
+    ids.forEach(function(k){
+      document.getElementById('e-'+k).textContent = errs[k];
+      document.getElementById('f-'+k).setAttribute('aria-invalid', errs[k] ? 'true' : 'false');
+      if (errs[k] && !first) first = k;
+    });
+    if (first) { document.getElementById('f-'+first).focus(); return; }
+    var text = 'REGISTRATION – Beyond Borders in Anesthesia (19 Dec 2026)\n' +
+      'Name: ' + v.name + '\nProfession: ' + v.role + '\nInstitution: ' + v.inst +
+      '\nCountry: ' + v.country + '\nEmail: ' + v.email + '\nWhatsApp: ' + v.wa;
+    document.getElementById('msg').textContent = text;
+    document.getElementById('wa-link').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(text);
+    var res = document.getElementById('result');
+    res.hidden = false;
+    res.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
+  });
+  document.getElementById('copy-msg').addEventListener('click', function(){
+    copy(document.getElementById('msg').textContent, document.getElementById('msg'));
+  });
+})();
+</script>
+
+</body>
+</html>
